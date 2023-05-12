@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Contact from './componets/Contact';
+import Contro from './componets/Contro';
+import Intro from './componets/Intro';
+import Main from './componets/Main';
+import Pastimes from './componets/Pastimes';
+import './styles/App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+           <Router>
+      <Routes>
+          <Route exact path="/" element= {<Main/>}/>
+          <Route exact path="/contro" element={<Contro/>}/>
+          <Route exact path="/intro" element={<Intro/>}/>
+          <Route exact path="/pastimes" element={<Pastimes/>}/>
+          <Route exact path="/contact" element={<Contact/>}/>
+      </Routes>
+    </Router>
+    </>
   );
 }
 
